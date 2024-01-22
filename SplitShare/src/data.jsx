@@ -60,7 +60,7 @@ export const housesData = [
     type: 'House',
     name: 'House 1',
     description:
-      'Large 6-room apartment with a beautiful terrace',
+      'Need five roommate which are two female and three male    320 000RWF per person',
     image: House1,
     imageLg: House1Lg,
     Location: 'Kimisagara',
@@ -69,7 +69,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '4200 sq ft',
     year: '2024',
-    price: '110000',
+    price: '320 000RWF',
     agent: {
       image: Agent1,
       name: 'Henriette Uwase',
@@ -81,16 +81,16 @@ export const housesData = [
     type: 'House',
     name: 'House 2',
     description:
-      '5i large design apartment with terrace',
+      'Need two male roommate 140 000RWF per person',
     image: House2,
     imageLg: House2Lg,
     Location: 'Gishushu',
     address: 'Kk 205 AVE, Kigali, Rwanda',
-    bedrooms: '6',
+    bedrooms: '4',
     bathrooms: '3',
     surface: '4200 sq ft',
     year: '2024',
-    price: '140000',
+    price: '140000RWF',
     agent: {
       image: Agent2,
       name: 'Bosco Niyonkuru',
@@ -102,7 +102,7 @@ export const housesData = [
     type: 'House',
     name: 'House 3',
     description:
-      '3-room apartment with a beautiful terrace',
+      ' Need three female roommate 230 000RWF per person',
     image: House3,
     imageLg: House3Lg,
     Location: 'Kacyiru',
@@ -111,7 +111,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '4200 sq ft',
     year: '2024',
-    price: '130000',
+    price: '230000 RWF',
     agent: {
       image: Agent3,
       name: 'Jean Claude',
@@ -123,16 +123,16 @@ export const housesData = [
     type: 'House',
     name: 'House 4',
     description:
-      'Magnificent duplex in a private villa',
+      'Magnificent Apartment it is an apartment with Ten bedrooms and five bathrooms it has all the furniture you need. so we Need eight roommate of any kind they can be female or male one person will pay 200 000RWF  ',
     image: House4,
     imageLg: House4Lg,
     Location: 'Remera',
     address: 'kk 50 AVE, Kigali, Rwanda',
-    bedrooms: '6',
-    bathrooms: '3',
+    bedrooms: '10',
+    bathrooms: '5',
     surface: '4200 sq ft',
     year: '2024',
-    price: '200000',
+    price: '200 000 RWF',
     agent: {
       image: Agent4,
       name: 'kenda Lora',
@@ -144,7 +144,7 @@ export const housesData = [
     type: 'House',
     name: 'House 5',
     description:
-      '4-Bedroom Duplex with Private Garden.',
+      'This house has six bedrooms and three bathrooms and it hass all the furniture that is needed in the house. so we need five roomate but we need only female  one person will pay 210 000RWF  ',
     image: House5,
     imageLg: House5Lg,
     Location: 'Gikondo',
@@ -153,7 +153,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '4200 sq ft',
     year: '2015',
-    price: '210000',
+    price: '210 000RWF',
     agent: {
       image: Agent5,
       name: 'Grover Robinson',
@@ -165,7 +165,7 @@ export const housesData = [
     type: 'House',
     name: 'House 6',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, illoat. Repudiandae ratione impedit delectus consectetur. Aspernaturvero obcaecati placeat ab distinctio unde ipsam molestias atqueratione delectus blanditiis nemo eius dignissimos doloremque quaealiquid maiores id tempore consequatur, quod pariatur saepe.',
+      'This house has eight bedrooms and four bathrooms and it hass all the furniture and it has kitchen that is needed in the house. so we need five roomate but we need only male  one person will pay 220 000RWF.',
     image: House6,
     imageLg: House6Lg,
     Location: 'Kibagabaga',
@@ -174,7 +174,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '6200 sq ft',
     year: '2024',
-    price: '220000',
+    price: '220 000RWF',
     agent: {
       image: Agent6,
       name: 'Teta Aleen',
@@ -186,7 +186,7 @@ export const housesData = [
     type: 'Apartment',
     name: 'Apartment 1',
     description:
-      'Modern 3-Bedroom Villa with Stylish Kitchen.',
+      'Morden has six bedrooms and three bathrooms and it hass all the furniture that is needed in the house. so we need five roomate but we need only female  one person will pay 210 000RWF',
     image: Apartment1,
     imageLg: Apartment1Lg,
     Location: 'Gasabo',
