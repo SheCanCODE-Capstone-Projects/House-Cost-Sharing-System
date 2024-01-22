@@ -25,8 +25,9 @@ const PropertyDetails = () => {
           <div className='mb-4 lg:mb-0 flex gap-x-2 text-sm'>
             <div className='text-white bg-orange-700 px-3 rounded-full'>{house.type}</div>
             <div className='text-black bg-white px-3 rounded-full'>{house.Location}</div>
+            <div className='text-black bg-orange-500 px-3 rounded-full'>{house.status}</div>
           </div>
-          <div className='text-orange-700 text-3xl font-semibold'>$ {house.price}</div>
+          <div className='text-orange-700 text-3xl font-semibold'> {house.price}</div>
         </div>
         <div className='flex flex-col items-start gap-8 lg:flex-row'>
           <div className='max-w-[768px]'>
