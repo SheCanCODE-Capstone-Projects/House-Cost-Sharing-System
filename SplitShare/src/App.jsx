@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import PropertyDetails from './pages/PropertyDetails';
 import Login from './pages/Login';
+import About from './pages/About';
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/property/:id" element={<PropertyDetails />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>
