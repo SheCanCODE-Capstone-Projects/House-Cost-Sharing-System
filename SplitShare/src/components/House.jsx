@@ -24,16 +24,20 @@ const House = ({ house }) => {
     config: config.default,
   });
 
+  const boxShadowStyle = {
+    boxShadow: '30px 30px 50px rgba(255, 165, 0, 0.4)',
+  };
+
   return (
     <animated.div
-      className='bg-black text-white border border-orange-400 p-5 rounded-lg rounded-tl-[90px] w-full max-w-[352px] mx-auto cursor-pointer shadow-md'
+      className='bg-black p-5 rounded-lg rounded-tl-[90px] w-full max-w-[352px] mx-auto cursor-pointer shadow-md'
       id='house-list'
       style={{
         ...fadeInAnimation,
         ...slideUpAnimation,
         ...hoverAnimation,
-        borderRadius: '20px', // Adjust the border-radius as needed
-        boxShadow: '30px 30px 50px rgba(255, 165, 0, 0.4)', // Adjust the shadow size as needed
+        borderRadius: '20px',
+        ...boxShadowStyle,
       }}
     >
       <img className='mb-8' src={image} alt='' />
