@@ -18,7 +18,7 @@ const About = () => {
   return (
     <animated.div className="font-sans opacity-75 p-4 mb-8 flex" style={{ ...fadeInAnimation, ...scaleAnimation }}>
       <div className='font-semibold'>
-        <h1 className="text-center text-2xl font-bold mb-4 text-orange-500">
+        <h1 className="text-center text-2xl font-bold mb-4 text-yellow-500">
           ABOUT US
         </h1>
         <p className="text-white mb-4">
@@ -36,7 +36,7 @@ const About = () => {
           Explore our website to find your perfect home or list your property with us. We're here <br /> to
           simplify the real estate journey for you!
         </p>
-        <h1 className="text-center text-2xl font-bold mb-4 text-orange-500">
+        <h1 className="text-center text-2xl font-bold mb-4 text-yellow-500">
           WHO WE ARE
         </h1>
         <p className="text-white mb-4">
@@ -45,7 +45,7 @@ const About = () => {
         connection, and a commitment to making shared living an enriching experience for everyone involved
         
         </p>
-        <h1 className=" text-center text-2xl font-bold mb-4 text-orange-500">
+        <h1 className=" text-center text-2xl font-bold mb-4 text-yellow-500">
           OUR MISSION
         </h1>
         <p className="text-white mb-4">
