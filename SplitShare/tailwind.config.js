@@ -23,12 +23,16 @@ export default {
   },
   extend: {
     colors: {
-      primary: '#ff9603',
-      secondary: '#ff9603',
+      primary: '#EAB308',
+      secondary: '#EAB308',
     },
   },
   backgroundColor: {
     '1b263b' : '#1b263b',
+  },
+  animation: {
+    'spin-slow': 'spin 6s linear infinite',
+    'spin-delay': 'spin 6s linear infinite -3s',
   },
   plugins: [],
 }

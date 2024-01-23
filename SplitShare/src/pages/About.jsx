@@ -17,7 +17,7 @@ const About = () => {
   return (
     <animated.div className="text-center mx-auto max-w-sm p-4 mb-8" style={{ ...fadeInAnimation, ...scaleAnimation }}>
       <div className='font-semibold'>
-        <h1 className="text-2xl font-bold mb-4 text-orange-500">
+        <h1 className="text-2xl font-bold mb-4 text-yellow-500">
           About Us
         </h1>
         <p className="text-white mb-4">

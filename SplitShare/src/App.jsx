@@ -6,10 +6,10 @@ import Footer from './components/Footer';
 //pages
 import Home from './pages/Home';
 import PropertyDetails from './pages/PropertyDetails';
-import Login from './pages/Login';
+import Login from './pages/Login'
 import AddProperty from './pages/AddProperty';
 import About from './pages/About';
-import Signup from './pages/Signup';
+import Signup from './pages/signup';
 
 const App = () => {
   return (
