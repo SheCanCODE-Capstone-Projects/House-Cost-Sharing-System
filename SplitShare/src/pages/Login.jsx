@@ -16,7 +16,15 @@ const Login = () => {
 
           </div>
 
-          <div className="product absolute right-0 bottom-0 flex items-center lg:justify-center w-full opacity-50 lg
+          <div className="product absolute right-0 bottom-0 flex items-center lg:justify-center w-full opacity-50 lg:opacity-100">
+
+          <img src={Loginpic} alt="product" className="-mb-10 lg:mb-0 -ml-12 lg:ml-0 -mt-3 product h-[50px] xl:h-[300px] 2xl:h-[450px] w-auto object-cover transform group-hover:translate-x-26 2xl:group-hover:translate-x-48 transition-all duration-1000 lg:duration-700 ease-in-out"></img>
+
+            <div className="shadow w-full h-5 bg-black bg-opacity-25 filter blur absolute bottom-0 lg:bottom-14 left-0 lg:left-24 rounded-full transform skew-x-10"></div>
+          </div>
+
+          <div className="hidden lg:block w-1/3 bg-white ml-auto"></div>
+
         </div>
 
         <div className="w-full lg:w-1/2 order-1 lg:order-2">
