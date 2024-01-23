@@ -8,11 +8,11 @@ const Header = () => {
       <div className='container mx-auto flex justify-between items-center'>
         <Link to='/'><img src={logonge} alt='logo' /></Link>
         <div className='flex items-center gap-6'>
-          <Link className='hover:text-orange-700 text-white transition' to='/'>Home</Link>
-          <Link className='hover:text-orange-700 text-white transition' to='/about'>About Us</Link>
-          <Link className='hover:text-orange-700 text-white transition' to='/addproperty'>Add new Property</Link>
-          <Link className='hover:text-orange-700 text-white transition' to='/login'>Log In</Link>
-          <Link className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-lg transition' to='/signup'>Sign Up</Link>
+          <Link className='hover:text-yellow-500 text-white transition' to='/'>Home</Link>
+          <Link className='hover:text-yellow-500 text-white transition' to='/about'>About Us</Link>
+          <Link className='hover:text-yellow-500 text-white transition' to='/addproperty'>Add new Property</Link>
+          <Link className='hover:text-yellow-500 text-white transition' to='/login'>Log In</Link>
+          <Link className='bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-3 rounded-lg transition' to='/signup'>Sign Up</Link>
         </div>
       </div>
     </header>

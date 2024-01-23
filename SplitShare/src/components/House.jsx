@@ -25,7 +25,7 @@ const House = ({ house }) => {
   });
 
   const boxShadowStyle = {
-    boxShadow: '30px 30px 50px rgba(255, 165, 0, 0.4)',
+    boxShadow: '30px 30px 50px rgba(255, 255, 0, 0.4)',
   };
 
   return (
@@ -42,8 +42,8 @@ const House = ({ house }) => {
     >
       <img className='mb-8' src={image} alt='' />
       <div className='mb-4 flex gap-x-2 text-sm'>
-        <div className='bg-black rounded-full text-orange-500 px-3'>{type}</div>
-        <div className='bg-white rounded-full text-orange-500 px-3'>{Location}</div>
+        <div className='bg-black rounded-full text-yellow-500 px-3'>{type}</div>
+        <div className='bg-white rounded-full text-black px-3'>{Location}</div>
       </div>
       <div className='text-lg font-semibold max-w-[260px]'>{address}</div>
       <div className='flex gap-x-4 my-4'>

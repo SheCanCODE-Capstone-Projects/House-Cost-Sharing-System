@@ -11,7 +11,7 @@ const HouseList = () => {
   const { houses, loading } = useContext(HouseContext);
   
   if (loading) {
-    return (<ImSpinner2 className='mx-auto animate-spin text-orange-600 text-6xl mt-[200px]' />);
+    return (<ImSpinner2 className='mx-auto animate-spin text-yellow-600 text-6xl mt-[200px]' />);
   }
 
   if (houses.length < 1) {
