@@ -38,7 +38,7 @@ const House = ({ house }) => {
         ...hoverAnimation,
         borderRadius: '20px',
         ...boxShadowStyle,
-        marginTop: '10px',
+        marginTop: '150px',
       }}
     >
       <img className='mb-8' src={image} alt='' />
