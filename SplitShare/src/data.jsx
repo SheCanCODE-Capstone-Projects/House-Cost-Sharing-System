@@ -302,7 +302,7 @@ export const housesData = [
     type: 'Apartment',
     name: 'Apartment 6',
     description:
-      'Stay with us Apartment it is apartment that  has twelve bedrooms and six bathrooms and it hass all the furniture that is needed in the house. so we need five roomate but we need only female  one person will pay 400 000RWF',
+      'Stay with us Apartment it is apartment that  has twelve bedrooms and six bathrooms and it hass all the furniture that is needed in the house. so we need five roomate but we need only female  one person will pay 90 000RWF',
     image: Apartment6,
     imageLg: Apartment6Lg,
     Location: 'Kicukiro',
