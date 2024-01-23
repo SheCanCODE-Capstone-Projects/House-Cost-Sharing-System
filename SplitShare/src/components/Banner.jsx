@@ -21,7 +21,7 @@ const Banner = () => {
       <video className='w-full h-[500px] object-cover object-center' src={video} autoPlay loop />
       <div>
         <animated.div className="text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full" style={fadeInAnimation}>
-          <h1 className="text-orange-500 text-4xl font-bold">Real Dreams, Real Home</h1>
+          <h1 className="text-yellow-500 text-4xl font-bold">Real Dreams, Real Home</h1>
         </animated.div>
       </div>
       <Search />

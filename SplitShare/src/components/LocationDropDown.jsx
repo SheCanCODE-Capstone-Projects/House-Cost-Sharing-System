@@ -30,7 +30,7 @@ const LocationDropDown = () => {
             <Menu.Item
               key={index}
               onClick={() => setLocation(item)}
-              className='cursor-pointer hover:text-orange-600 transition'
+              className='cursor-pointer hover:text-yellow-500 transition'
               as='li'
             >
               {item}
