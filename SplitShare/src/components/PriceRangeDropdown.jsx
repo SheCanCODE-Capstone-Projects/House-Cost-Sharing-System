@@ -6,7 +6,7 @@ import { HouseContext } from './HouseContext';
 const PriceRangeDropdown = () => {
   const { price, setPrice } = useContext(HouseContext);
   useContext(HouseContext);
-  
+
   const [isOpen, setIsOpen] = useState(false);
 
   const prices = [
@@ -31,7 +31,7 @@ const PriceRangeDropdown = () => {
     {
       value: '30000 - 40000',
     },
-  ]
+  ];
 
   return (
     <Menu as='div' className='dropdown relative'>
@@ -48,7 +48,7 @@ const PriceRangeDropdown = () => {
         )}
       </Menu.Button>
 
-      <Menu.Items className='dropdown-menu bg-black'>
+      <Menu.Items className='dropdown-menu bg-black overflow-y-auto max-h-60'>
         {isOpen &&
           prices.map((price, index) => (
             <Menu.Item

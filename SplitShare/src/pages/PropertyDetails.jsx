@@ -66,8 +66,8 @@ const PropertyDetails = () => {
               <input className='border border-gray-300 focus:border-yellow-600 outline-none rounded w-full px-4 h-14 text-sm' type='text' placeholder='Phone*'/>
               <textarea className='border border-gray-300  focus:border-yellow-600 outline-none resize-none rounded w-full p-4 h-36 text-sm text-gray-400' placeholder='Message*' defaultValue='Hello, I am Interested in Joining the [Modern apartment]'></textarea>
               <div className='flex gap-x-2'>
-                <button className='bg-yellow-600 hover:bg-yellow-700 text-white rounded p-4 text-sm w-full transition'>Send Message</button>
-                <button className='border border-yellow-600 text-yellow-600 hover:border-yellow-500 hover:text-yellow-700 rounded p-4 text-sm w-full transition'>Call</button>
+                <button className='bg-yellow-500 hover:bg-yellow-700 text-white rounded p-4 text-sm w-full transition'>Send Message</button>
+                <button className='border border-yellow-500 text-yellow-600 hover:border-yellow-500 hover:text-yellow-700 rounded p-4 text-sm w-full transition'>Call</button>
               </div>
             </form>
           </div>

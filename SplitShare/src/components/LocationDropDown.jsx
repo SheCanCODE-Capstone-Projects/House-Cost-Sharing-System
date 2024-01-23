@@ -6,7 +6,7 @@ import { HouseContext } from './HouseContext';
 const LocationDropDown = () => {
   const { location, setLocation, locations } = useContext(HouseContext);
   useContext(HouseContext);
-  
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -24,7 +24,7 @@ const LocationDropDown = () => {
         )}
       </Menu.Button>
 
-      <Menu.Items className='dropdown-menu bg-black'>
+      <Menu.Items className='dropdown-menu bg-black overflow-y-auto max-h-60'>
         {isOpen &&
           locations.map((item, index) => (
             <Menu.Item
