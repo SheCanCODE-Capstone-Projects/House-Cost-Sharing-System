@@ -10,18 +10,20 @@ import Login from './pages/Login'
 import AddProperty from './pages/AddProperty';
 import About from './pages/About';
 import Signup from './pages/signup';
+import ResetPassword from './components/ResetPassword';
 
 const App = () => {
   return (
     <div className='max-w-[1920px] mx-auto bg-black'>
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/addproperty" element={<AddProperty />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/reset-password/:token/:userId" component={ResetPassword} />
       </Routes>
       <Footer />
     </div>
