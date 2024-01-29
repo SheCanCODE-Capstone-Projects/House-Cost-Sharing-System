@@ -36,8 +36,8 @@ const signIn = (e) => {
                 localStorage.setItem('user', localUserData);
 
                 setTimeout(() => {
-                    // navigate('/');
-                    window.location.replace('/home');
+                    console.log("Login Successful");
+                    window.location.replace('/addproperty');
                 }, 3000);
             }
         })
@@ -53,6 +53,15 @@ const signIn = (e) => {
 const handleInputs = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
 }
+
+const handleForgotPassword = async () => {
+  try {
+    const response = await axios.post(`http://localhost:8015/api/Aprop/auth/forgot-password`, { email: user.email });
+    setMessage({ title: 'Success', description: response.data.message });
+  } catch (error) {
+    setError({ title: "Error", description: error.response.data.message });
+  }
+};
 
   return (
     <section className="bg-black overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
@@ -129,6 +138,7 @@ const handleInputs = (e) => {
               <div className="col-span-6 text-right">
                   <a
                     href="#"
+                    onClick={handleForgotPassword}
                     className="text-sm text-yellow-500 hover:underline"
                   >
                     Forgot Password?

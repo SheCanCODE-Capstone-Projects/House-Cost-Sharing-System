@@ -7,17 +7,9 @@ const AddProperty = () => {
   const [housePhoto, setHousePhoto] = useState(null);
   const [description, setDescription] = useState('');
 
-
   const formAnimation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    reset: true,
-  });
-
-  const buttonAnimation = useSpring({
-    from: { opacity: 0, transform: 'translateY(20px)' },
-    to: { opacity: 1, transform: 'translateY(0px)' },
-    reset: true,
   });
 
   const handleProfilePhotoChange = (e) => {
@@ -39,7 +31,6 @@ const AddProperty = () => {
   };
 
   const handleSubmit = () => {
-    
     console.log('Form submitted!');
     console.log('Name:', name);
     console.log('Profile Photo:', profilePhoto);
@@ -49,7 +40,7 @@ const AddProperty = () => {
 
   return (
     <animated.div style={formAnimation} className='w-full min-h-screen flex justify-center items-center bg-black'>
-      <animated.div style={buttonAnimation} className='relative w-[520px] h-[620px] bg-yellow-500 rounded-lg p-8'>
+      <div className='relative w-[520px] h-[620px] bg-yellow-500 rounded-lg p-8'>
         <h2 className='text-2xl font-bold mb-4'>Add Property</h2>
 
         <div className='mb-4'>
@@ -125,7 +116,7 @@ const AddProperty = () => {
         >
           Submit
         </button>
-      </animated.div>
+      </div>
     </animated.div>
   );
 };
