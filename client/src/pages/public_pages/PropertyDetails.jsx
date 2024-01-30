@@ -1,5 +1,5 @@
 import React from 'react';
-import { housesData } from '../data';
+import { housesData } from '../../data';
 import { useParams } from 'react-router-dom';
 
 import { BiBed, BiBath, BiArea } from 'react-icons/bi';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSpring, animated, config } from 'react-spring';
-import hous from '../assets/img/hous.png'
+import hous from '../../assets/img/hous.png';
 
 const About = () => {
   const fadeInAnimation = useSpring({

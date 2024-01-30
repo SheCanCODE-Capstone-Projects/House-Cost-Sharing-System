@@ -1,33 +1,34 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom';
-//components
-import Header from './components/Header';
-import Footer from './components/Footer';
-//pages
-import Home from './pages/Home';
-import PropertyDetails from './pages/PropertyDetails';
-import Login from './pages/Login'
-import AddProperty from './pages/AddProperty';
-import About from './pages/About';
-import Signup from './pages/signup';
-import ResetPassword from './components/ResetPassword';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainUserPage from './pages/public_pages/MainUserPage';
+import MainAdminPage from './pages/admin_pages/MainAdminPage';
+import Home from './pages/public_pages/Home';
+import About from './pages/public_pages/About';
+import PropertyDetails from './pages/public_pages/PropertyDetails';
+import Login from './pages/public_pages/Login';
+import Signup from './pages/public_pages/Signup';
+import AddProperty from './pages/admin_pages/AddProperty';
 
 const App = () => {
   return (
-    <div className='max-w-[1920px] mx-auto bg-black'>
-      <Header />
+    <div className='App'>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/property/:id" element={<PropertyDetails />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/addproperty" element={<AddProperty />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/reset-password/:token/:userId" component={ResetPassword} />
-      </Routes>
-      <Footer />
-    </div>
-  )
-}
+        <Route path='/' element={<MainUserPage />}>
+          {/* Public pages */}
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/PropertyDetails/:id' element={<PropertyDetails />} />
+        </Route>
+        {/* Authentication Pages */}
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
 
-export default App
+        <Route path='/' element={<MainAdminPage />}>
+          {/* Admin Pages */}
+          <Route path='/addProperty' element={<AddProperty />} />
+          </Route>
+      </Routes>
+    </div>
+  );
+};
+
+export default App;

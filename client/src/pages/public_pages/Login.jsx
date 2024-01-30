@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Loginpic from '../assets/Loginpic.png';
+import Loginpic from '../../assets/Loginpic.png';
 import axios from 'axios';
 
 const Login = () => {
