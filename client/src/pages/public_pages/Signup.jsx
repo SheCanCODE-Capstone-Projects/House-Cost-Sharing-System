@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import SuccessAlert from "../components/SuccessAlert";
-import ErrorAlert from "../components/ErrorAlert";
-import Loginpic from "../assets/Loginpic.png";
+import SuccessAlert from "../../components/SuccessAlert";
+import ErrorAlert from "../../components/ErrorAlert";
+import Loginpic from "../../assets/Loginpic.png";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -25,6 +25,8 @@ const SignUp = () => {
     password: "",
   });
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const clearInputs = () => {
     setUser({
       firstName: "",
@@ -41,15 +43,15 @@ const SignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
 
-      if (user.firstName.length < 3) {
-        setError({
-          title: "Input error",
-          description: "First Name must be at least 3 characters long",
-        });
-        return;
-      }
+    if (user.firstName.length < 3) {
+      setError({
+        title: "Input error",
+        description: "First Name must be at least 3 characters long",
+      });
+      return;
+    }
 
-      axios.post("http://localhost:8015/api/Aprop/auth/signup", user)
+    axios.post("http://localhost:8015/api/Aprop/auth/signup", user)
       .then((response) => {
         console.log(response.data);
         if (response.status === 201) {
@@ -57,8 +59,9 @@ const SignUp = () => {
             title: "Success",
             description: response.data.message,
           });
+          setShowSuccess(true);
           setTimeout(() => {
-            console.log("Account Created Successful");
+            console.log("Account Created Successfully!");
             navigate("/login");
           }, 3000);
         }
@@ -67,8 +70,8 @@ const SignUp = () => {
         setError({
           title: "Error",
           description: error
+        })
       })
-    })
   }
 
   return (
@@ -97,7 +100,7 @@ const SignUp = () => {
           <div className="form-wrapper flex items-center lg:h-full px-10 relative z-10 pt-16 lg:pt-0">
             <div className="w-full space-y-5">
               <div className="form-caption flex items-end justify-center text-center space-x-3 mb-20">
-                {message.title && <SuccessAlert message={message} />}
+                {showSuccess && <SuccessPopup message={message} />}
                 {error.title && <ErrorAlert error={error} />}
                 <span className="text-3xl font-semibold text-black">
                   Sign Up
@@ -218,6 +221,17 @@ const SignUp = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+const SuccessPopup = ({ message }) => {
+  return (
+    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
+      <div className="bg-white p-8 rounded-lg text-center">
+        <h2 className="text-xl font-semibold text-yellow-500 mb-2">{message.title}</h2>
+        <p className="text-grey-800">{message.description}</p>
+      </div>
+    </div>
   );
 };
 
