@@ -1,41 +1,54 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+// import { useHistory } from 'react-router-dom'; // Import useHistory hook
 
 const AddProperty = () => {
-  const [name, setName] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState(null);
-  const [housePhoto, setHousePhoto] = useState(null);
-  const [description, setDescription] = useState('');
+  const [property, setProperty] = useState({
+    name: '',
+    profilePhoto: null,
+    housePhoto: null,
+    description: ''
+  });
+
+  // const history = useHistory(); // Initialize history
 
   const formAnimation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
   });
 
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/Aprop/house/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(property),
+      });
+      if (response.ok) {
+        history.push('/')
+      } else {
+        console.error('Failed to add property');
+      }
+    } catch (error) {
+      console.error('Failed to add property:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProperty({ ...property, [name]: value });
+  };
+
   const handleProfilePhotoChange = (e) => {
     const file = e.target.files[0];
-    setProfilePhoto({ file, url: URL.createObjectURL(file) });
+    setProperty({ ...property, profilePhoto: URL.createObjectURL(file) });
   };
 
   const handleHousePhotoChange = (e) => {
     const file = e.target.files[0];
-    setHousePhoto({ file, url: URL.createObjectURL(file) });
-  };
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    console.log('Form submitted!');
-    console.log('Name:', name);
-    console.log('Profile Photo:', profilePhoto);
-    console.log('House Photo:', housePhoto);
-    console.log('Description:', description);
+    setProperty({ ...property, housePhoto: URL.createObjectURL(file) });
   };
 
   return (
@@ -51,8 +64,8 @@ const AddProperty = () => {
             type='text'
             id='name'
             name='name'
-            value={name}
-            onChange={handleNameChange}
+            value={property.name}
+            onChange={handleChange}
             className='mt-1 p-2 w-full border rounded-md'
           />
         </div>
@@ -61,12 +74,6 @@ const AddProperty = () => {
           <label htmlFor='profilePhoto' className='block text-sm font-medium text-gray-700'>
             Profile Photo
           </label>
-          {profilePhoto && (
-            <div className='flex items-center mb-2'>
-              <img src={profilePhoto.url} alt='Profile' className='w-10 h-10 rounded-full mr-2' />
-              <span className='text-gray-700'>{profilePhoto.file.name}</span>
-            </div>
-          )}
           <input
             type='file'
             id='profilePhoto'
@@ -80,12 +87,6 @@ const AddProperty = () => {
           <label htmlFor='housePhoto' className='block text-sm font-medium text-gray-700'>
             House Photo
           </label>
-          {housePhoto && (
-            <div className='flex items-center mb-2'>
-              <img src={housePhoto.url} alt='House' className='w-10 h-10 rounded-full mr-2' />
-              <span className='text-gray-700'>{housePhoto.file.name}</span>
-            </div>
-          )}
           <input
             type='file'
             id='housePhoto'
@@ -102,8 +103,8 @@ const AddProperty = () => {
           <textarea
             id='description'
             name='description'
-            value={description}
-            onChange={handleDescriptionChange}
+            value={property.description}
+            onChange={handleChange}
             rows='3'
             className='mt-1 p-2 w-full border rounded-md'
           ></textarea>
