@@ -56,7 +56,12 @@ const SignIn = async (req, res, next) => {
     res
       .cookie("access_token", token, { httpOnly: true, expires: expiryDate })
       .status(200)
-      .json(rest);
+      .json({ 
+        user: rest, 
+        token: token, 
+        message: "Login successful" 
+      });
+      
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
