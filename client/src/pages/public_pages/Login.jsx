@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import Loginpic from '../../assets/Loginpic.png';
 import axios from 'axios';
 
+const ErrorAlert = ({ error }) => {
+  return (
+    <div className="absolute top-16 right-0 left-0 mx-auto w-96 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded z-50">
+      <h4 className="alert-heading font-bold mb-2">{error.title}</h4>
+      <p className='block sm:inline'>{error.description}</p>
+    </div>
+  );
+};
+
 const Login = () => {
   const [user, setUser] = useState({
     email: '',
@@ -23,6 +32,15 @@ const Login = () => {
 
     setError({ title: "", description: "" });
     setMessage({ title: "", description: "" });
+
+    
+    if (!user.email || !user.password) {
+      setError({
+        title: "Input Error",
+        description: "Please enter both email and password."
+      });
+      return;
+    }
 
     axios.post(`http://localhost:8015/api/Aprop/auth/signin`, user)
       .then(response => {
@@ -63,9 +81,9 @@ const Login = () => {
   return (
     <section className="bg-black overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
       <div className="login-container container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex flex-wrap lg:flex-nowrap flex-col lg:flex-row justify-between group">
-        {/* Left Side */}
+        
         <div className="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-yellow-dark flex relative order-2 lg:order-1">
-          {/* Product Image */}
+          
           <div className="product absolute right-0 bottom-0 flex items-center lg:justify-center w-full opacity-50 lg:opacity-100">
             <img
               src={Loginpic}
@@ -76,13 +94,12 @@ const Login = () => {
           </div>
           <div className="hidden lg:block w-1/3 bg-white ml-auto"></div>
         </div>
-        {/* Right Side */}
+        
         <div className="w-full lg:w-1/2 order-1 lg:order-2">
           <div className="form-wrapper flex items-center lg:h-full px-10 relative z-10 pt-16 lg:pt-0">
             <div className="w-full space-y-5">
               <div className="form-caption flex items-end justify-center text-center space-x-3 mb-20">
                 {message.title && <SuccessPopup message={message} />}
-                {error.title && <ErrorAlert error={error} />}
                 <span className="text-3xl font-semibold text-black">Sign Up</span>
               </div>
               <form action="#" className="mt-8 grid grid-cols-6 gap-6" onSubmit={signIn}>
@@ -123,6 +140,7 @@ const Login = () => {
                   </p>
                 </div>
               </form>
+              {error.title && <ErrorAlert error={error} />}
             </div>
           </div>
         </div>
