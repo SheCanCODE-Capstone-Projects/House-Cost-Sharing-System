@@ -114,7 +114,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '4200 sq ft',
     year: '2024',
-    price: '230 000 RWF',
+    price: '230,000RWF',
     agent: {
       image: Agent3,
       name: 'Jean Claude',
@@ -136,7 +136,7 @@ export const housesData = [
     bathrooms: '5',
     surface: '4200 sq ft',
     year: '2024',
-    price: '100 000 RWF',
+    price: '100,000RWF',
     agent: {
       image: Agent4,
       name: 'kenda Lora',
@@ -158,7 +158,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '4200 sq ft',
     year: '2015',
-    price: '210 000RWF',
+    price: '210,000RWF',
     agent: {
       image: Agent5,
       name: 'Grover Robinson',
@@ -180,7 +180,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '6200 sq ft',
     year: '2024',
-    price: '150 000RWF',
+    price: '150,000RWF',
     agent: {
       image: Agent6,
       name: 'Teta Aleen',
@@ -202,7 +202,7 @@ export const housesData = [
     bathrooms: '1',
     surface: '1200 sq ft',
     year: '2024',
-    price: '250 000RWF',
+    price: '250,000RWF',
     agent: {
       image: Agent7,
       name: 'Laenna Smith',
@@ -224,7 +224,7 @@ export const housesData = [
     bathrooms: '1',
     surface: '1000 sq ft',
     year: '2023',
-    price: '100 000RWF',
+    price: '100,000RWF',
     agent: {
       image: Agent8,
       name: 'Linda Smith',
@@ -246,7 +246,7 @@ export const housesData = [
     bathrooms: '6',
     surface: '1100 sq ft',
     year: '2024',
-    price: '200 000RWF',
+    price: '200,000RWF',
     agent: {
       image: Agent9,
       name: 'willy Smith',
@@ -268,7 +268,7 @@ export const housesData = [
     bathrooms: '5',
     surface: '1000 sq ft',
     year: '2024',
-    price: '150 000RWF',
+    price: '150,000RWF',
     agent: {
       image: Agent5,
       name: 'Aline umutoni',
@@ -290,7 +290,7 @@ export const housesData = [
     bathrooms: '5',
     surface: '1100 sq ft',
     year: '2024',
-    price: '200 000RWF',
+    price: '200,000RWF',
     agent: {
       image: Agent11,
       name: 'Deborah white',
@@ -312,7 +312,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '1100 sq ft',
     year: '2024',
-    price: '90 000RWF',
+    price: '90,000RWF',
     agent: {
       image: Agent10,
       name: 'Esther Lee',
