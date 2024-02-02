@@ -14,22 +14,19 @@ const PriceRangeDropdown = () => {
       value: 'Price range (any)',
     },
     {
-      value: '100000 - 130000',
+      value: '90,000RWF - 100,000RWF',
     },
     {
-      value: '130000 - 160000',
+      value: '100,000RWF - 150,000RWF',
     },
     {
-      value: '160000 - 190000',
+      value: '200,0000RWF - 250,0000RWF',
     },
     {
-      value: '190000 - 220000',
+      value: '300,0000RWF - 350,0000RWF',
     },
     {
-      value: '10000 - 30000',
-    },
-    {
-      value: '30000 - 40000',
+      value: '400,000RWF - 450,000RWF',
     },
   ];
 
