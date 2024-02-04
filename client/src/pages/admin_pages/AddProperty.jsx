@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-// import { useHistory } from 'react-router-dom'; // Import useHistory hook
-
+import axios from "axios";
+import {  useNavigate } from 'react-router-dom';
 const AddProperty = () => {
+  const navigate = useNavigate();
   const [property, setProperty] = useState({
     name: '',
     profilePhoto: null,
     housePhoto: null,
     description: ''
   });
-
-  // const history = useHistory(); // Initialize history
 
   const formAnimation = useSpring({
     opacity: 1,
@@ -19,18 +18,27 @@ const AddProperty = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/api/Aprop/house/add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(property),
-      });
-      if (response.ok) {
-        history.push('/')
-      } else {
-        console.error('Failed to add property');
-      }
+     
+      const formData = new FormData();
+      formData.append('name', property.name);
+      formData.append('profilePhoto', property.profilePhoto);
+      formData.append('housePhoto', property.housePhoto);
+      formData.append('description', property.description);
+
+      // const response = await fetch('/api/Aprop/house/add', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: formData,
+      // });
+      //http://localhost:8015/api/Aprop/house/add
+      const { data } = await axios.post("http://localhost:8015/api/Aprop/house/add", formData);
+
+     
+        alert(data.message);
+        navigate('/');
+      
     } catch (error) {
       console.error('Failed to add property:', error);
     }

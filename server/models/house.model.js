@@ -9,11 +9,13 @@ const adminSchema = new mongoose.Schema({
     },
     profilePhoto: {
         type: String,
-        required: [true, 'Profile photo is required']
+        required: false
+        // required: [false, 'Profile photo is required']
     },
     housePhoto: {
         type: String,
-        required: [true, 'House photo is required']
+        // required: [true, 'House photo is required']
+        required: false
     },
     description: {
         type: String,
