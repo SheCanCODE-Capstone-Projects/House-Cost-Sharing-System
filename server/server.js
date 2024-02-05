@@ -5,17 +5,35 @@ const authRoute = require('./routes/auth.routes');
 const { default: mongoose } = require('mongoose');
 const app = express();
 const cors = require("cors");
+const path = require('path');
+const multer= require('multer');
 
 app.use(express.json());
 
 var corsOptions = {
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5174'],
     methods: 'GET, POST, PUT, DELETE',
     allowedHeaders: 'Content-Type, Authorization'
 }
 
 app.use(cors(corsOptions));
 
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, 'storage/')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname )
+//     }
+//   })
+//   const upload = multer({storage})
+// app.set('view engine', 'ejs');
+// app.post("/upload", upload.single('image'), (req, res) => {
+//     res.send("Image Saved");
+// });
+// app.post("/upload", (req, res) => {
+//     res.send("image upload");
+// });
 app.use('/api/Aprop', allRoutes);
 app.use('/api/Aprop', authRoute);
 
