@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Loginpic from '../../assets/Loginpic.png';
 import axios from 'axios';
+import logonge from '../../assets/logonge.png';
 
 const ErrorAlert = ({ error }) => {
   return (
@@ -83,6 +84,7 @@ const Login = () => {
       <div className="login-container container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex flex-wrap lg:flex-nowrap flex-col lg:flex-row justify-between group">
         
         <div className="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-yellow-dark flex relative order-2 lg:order-1">
+        <a href='/'><img src={logonge} alt='logo' className="mt-12 ml-12" /></a>
           
           <div className="product absolute right-0 bottom-0 flex items-center lg:justify-center w-full opacity-50 lg:opacity-100">
             <img
