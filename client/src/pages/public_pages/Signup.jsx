@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SuccessAlert from "../../components/SuccessAlert";
 import ErrorAlert from "../../components/ErrorAlert";
 import Loginpic from "../../assets/Loginpic.png";
+import logonge from "../../assets/logonge.png";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -33,8 +34,8 @@ const SignUp = () => {
       lastName: "",
       email: "",
       password: "",
-    })
-  }
+    });
+  };
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -51,7 +52,8 @@ const SignUp = () => {
       return;
     }
 
-    axios.post("http://localhost:8015/api/Aprop/auth/signup", user)
+    axios
+      .post("http://localhost:8015/api/Aprop/auth/signup", user)
       .then((response) => {
         console.log(response.data);
         if (response.status === 201) {
@@ -66,17 +68,20 @@ const SignUp = () => {
           }, 3000);
         }
       })
-      .catch(error => {
+      .catch((error) => {
         setError({
           title: "Error",
-          description: error
-        })
-      })
-  }
+          description: error,
+        });
+      });
+  };
 
   return (
     <section className="bg-black overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
       <div className="login-container container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex flex-wrap lg:flex-nowrap flex-col lg:flex-row justify-between group">
+      <a href="/">
+            <img src={logonge} alt="logo" className="mt-12 ml-12" />
+          </a>
         <div className="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-yellow-dark flex relative order-2 lg:order-1">
           <div className="text-center hidden lg:flex items-center justify-start h-full w-full select-none">
             <span className="transform block whitespace-nowrap h-full -rotate-90 text-[55px] 2xl:text-[70px] font-black uppercase text-yellow-500 opacity-0 transition-all group-hover:opacity-100 ml-10 2xl:ml-12 group-hover:-ml-20 2xl:group-hover:ml-26 lg:group-hover:ml-20 duration-1000 lg:duration-700 ease-in-out">
@@ -228,7 +233,9 @@ const SuccessPopup = ({ message }) => {
   return (
     <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
       <div className="bg-white p-8 rounded-lg text-center">
-        <h2 className="text-xl font-semibold text-yellow-500 mb-2">{message.title}</h2>
+        <h2 className="text-xl font-semibold text-yellow-500 mb-2">
+          {message.title}
+        </h2>
         <p className="text-grey-800">{message.description}</p>
       </div>
     </div>
